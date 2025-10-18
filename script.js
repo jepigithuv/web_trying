@@ -2,7 +2,7 @@
 const products = [
     { id: 1, name: 'Bundling T-Shirt & Bandana', price: 150000, image: 'WhatsApp Image 2025-10-18 at 13.24.20 (1).jpeg' },
     { id: 2, name: 'T-Shirt True Love', price: 120000, image: 'assets/jam2.jpg' },
-    { id: 3, name: 'T-Shirt 0322 Troops', price: 120000, image: 'assets/tas3.jpg' },
+    { id: 3, name: 'T-Shirt 0322 Troops', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.34.46.jpeg' },
     { id: 4, name: 'T-Shirt Forever Blue Brigade', price: 120000, image: 'assets/kacamata4.jpg' },
 ];
 
