@@ -1,18 +1,344 @@
+/* Import Fonts: Playfair Display untuk judul, Roboto untuk teks biasa */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+/* Variabel CSS untuk kemudahan perubahan tema */
+:root {
+    --primary-color: #333; /* Hitam atau abu-abu gelap */
+    --secondary-color: #A49156; /* Emas/Krem */
+    --background-color: #F8F8F8; /* Hampir putih */
+    --text-color: #333;
+    --light-text-color: #555;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #62889E;
-  font-family: Arial, sans-serif;
-  color: #191970;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
-.kartu-profil {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0,1);
-  text-align: center;
+
+/* Header dan Navigasi */
+header {
+    background-color: #fff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.kartu-profil img {
-  width: 150px;
-  border-radius: 50%;
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 25px;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Tombol Keranjang */
+.cart-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    position: relative;
+    padding: 5px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.7em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Bagian Hero */
+.hero-section {
+    background: url('path/to/your/hero-image.jpg') center/cover no-repeat; /* Ganti dengan gambar produk mewah Anda */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap untuk teks */
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Tombol */
+.btn {
+    padding: 10px 25px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+.primary-btn:hover {
+    background-color: #92804b; /* Warna emas sedikit lebih gelap */
+    border-color: #92804b;
+}
+
+.secondary-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Bagian Produk */
+.produk-grid-section {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.produk-grid-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.produk-grid-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-card .btn {
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Modal Keranjang */
+.modal {
+    display: none; /* Sembunyikan secara default */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* 10% dari atas dan diposisikan di tengah */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Animasi untuk modal */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+#cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: 700;
+}
+
+.item-price {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #cc0000;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.cart-summary button {
+    margin-top: 15px;
+    padding: 12px 30px;
 }
