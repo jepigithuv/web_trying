@@ -1,23 +1,25 @@
-/* Import Fonts: Cormorant Garamond untuk judul produk, Raleway untuk teks harga */
+/* 🌸 Import Fonts: Cormorant Garamond untuk judul produk, Raleway untuk teks harga */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Raleway:wght@400;600&display=swap');
 
-/* Variabel CSS untuk kemudahan perubahan tema */
+/* 🎨 Variabel CSS untuk kemudahan perubahan tema */
 :root {
-    --primary-color: #333; /* Hitam atau abu-abu gelap */
-    --secondary-color: #A49156; /* Emas/Krem */
-    --background-color: #F8F8F8; /* Hampir putih */
+    --primary-color: #333; /* Hitam elegan */
+    --secondary-color: #A49156; /* Emas lembut */
+    --background-color: #F8F8F8; /* Putih keabu */
     --text-color: #333;
     --light-text-color: #555;
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Raleway', sans-serif;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body umum */
 body {
     font-family: var(--font-body);
     line-height: 1.6;
@@ -160,12 +162,37 @@ nav ul li a:hover {
     border-color: var(--secondary-color);
 }
 
-/* Bagian Produk */
+/* 🛍️ Bagian Produk */
 .produk-grid-section {
+    position: relative;
     padding: 50px 5%;
     text-align: center;
+    background-image: url('images/background-texture-marble.jpg'); /* nama file background */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* Overlay lembut agar produk tetap jelas */
+.produk-grid-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+}
+
+.produk-grid-section h2,
+.product-grid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Judul bagian produk */
 .produk-grid-section h2 {
     font-family: var(--font-heading);
     font-size: 2.5em;
@@ -185,12 +212,14 @@ nav ul li a:hover {
     margin: 10px auto 0;
 }
 
+/* Grid produk */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
+/* Kartu produk */
 .product-card {
     background-color: #fff;
     border: 1px solid #eee;
@@ -212,7 +241,7 @@ nav ul li a:hover {
     display: block;
 }
 
-/* ✅ Font elegan untuk produk */
+/* 🩰 Font elegan untuk produk */
 .product-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -222,6 +251,7 @@ nav ul li a:hover {
     margin-bottom: 5px;
 }
 
+/* ✨ Harga */
 .product-price {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
