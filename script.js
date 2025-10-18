@@ -126,12 +126,12 @@ function handleCheckout() {
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     alert(`
-        --- Pesanan Anda ---
+        --- PESANAN ANDA ---
         ${orderDetails}
         
         Total Akhir: ${formatRupiah(total)}
         
-        Terima kasih! (Simulasi tanpa pembayaran nyata)
+        Thank u for shopping :D
     `);
 
     cart = [];
