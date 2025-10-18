@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>low profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>northenboyss.co</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script> </head>
 <body>
-  <div class="kartu-profil">
-    <img src="WhatsApp Image 2025-10-09 at 16.56.35.jpeg" alt="Foto profil saya">
-    <h1>DONI</h1>
-    <p>Perkenalkan saya doni, Asal dari menteng Jakarta pusat. Welcome to my website!</p>
-    <a href="https://www.instagram.com/jakartakeras">Visit my Instagram!</a>
-    <button id="sapaButton">Sapa Saya!</button>
-  </div>
-<script src="script.js"></script>
+    <header>
+        <div class="logo">NORTHENBOYSS</div>
+        <nav>
+            <ul>
+                <li><a href="#produk-grid">Produk</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+        <button id="cart-button" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-count">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Welcome To Our Store</h1>
+            <p>0322 AREA</p>
+            <a href="#produk-grid" class="btn primary-btn">Lihat Semua Produk</a>
+        </section>
+
+        <section id="produk-grid" class="produk-grid-section">
+            <h2>See All Product
+            <div id="product-list" class="product-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Keranjang Belanja Anda</h3>
+            <div id="cart-items">
+                <p class="empty-cart-message">Keranjang Anda masih kosong.</p>
+            </div>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">Rp 0</span></p>
+                <button id="checkout-btn" class="btn secondary-btn" disabled>Checkout (Demo)</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; northenboyss200023. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
