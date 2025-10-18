@@ -1,9 +1,9 @@
 // Data Produk
 const products = [
-    { id: 1, name: 'Bundling T-Shirt & Bandana', price: 150000, image: 'WhatsApp Image 2025-10-18 at 13.24.20 (1).jpeg' },
-    { id: 2, name: 'T-Shirt True Love', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.34.47.jpeg' },
-    { id: 3, name: 'T-Shirt 0322 Troops', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.34.46.jpeg' },
-    { id: 4, name: 'T-Shirt Forever Blue Brigade', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.24.20.jpeg' },
+    { id: 1, name: 'Best Bundling', price: 150000, image: 'WhatsApp Image 2025-10-18 at 13.24.20 (1).jpeg' },
+    { id: 2, name: 'True Love', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.34.47.jpeg' },
+    { id: 3, name: '0322 Troops', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.34.46.jpeg' },
+    { id: 4, name: 'Forever Blue Brigade', price: 120000, image: 'WhatsApp Image 2025-10-18 at 13.24.20.jpeg' },
 ];
 
 // Keranjang belanja
@@ -115,7 +115,7 @@ function updateCartDisplay() {
     });
 }
 
-// 5. Checkout (Demo)
+// 5. Checkout
 function handleCheckout() {
     if (cart.length === 0) {
         alert("Keranjang Anda kosong! Silakan tambahkan produk.");
@@ -126,7 +126,7 @@ function handleCheckout() {
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     alert(`
-        --- Pesanan Anda (DEMO) ---
+        --- Pesanan Anda ---
         ${orderDetails}
         
         Total Akhir: ${formatRupiah(total)}
