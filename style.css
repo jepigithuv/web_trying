@@ -1,5 +1,5 @@
-/* Import Fonts: Playfair Display untuk judul, Roboto untuk teks biasa */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+/* Import Fonts: Cormorant Garamond untuk judul produk, Raleway untuk teks harga */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Raleway:wght@400;600&display=swap');
 
 /* Variabel CSS untuk kemudahan perubahan tema */
 :root {
@@ -8,8 +8,8 @@
     --background-color: #F8F8F8; /* Hampir putih */
     --text-color: #333;
     --light-text-color: #555;
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Raleway', sans-serif;
 }
 
 * {
@@ -89,7 +89,7 @@ nav ul li a:hover {
 
 /* Bagian Hero */
 .hero-section {
-    background: url('path/to/your/hero-image.jpg') center/cover no-repeat; /* Ganti dengan gambar produk mewah Anda */
+    background: url('path/to/your/hero-image.jpg') center/cover no-repeat;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -109,7 +109,7 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Overlay gelap untuk teks */
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -145,7 +145,7 @@ nav ul li a:hover {
 }
 
 .primary-btn:hover {
-    background-color: #92804b; /* Warna emas sedikit lebih gelap */
+    background-color: #92804b;
     border-color: #92804b;
 }
 
@@ -212,17 +212,21 @@ nav ul li a:hover {
     display: block;
 }
 
+/* ✅ Font elegan untuk produk */
 .product-card h3 {
-    font-family: var(--font-heading);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     font-size: 1.4em;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
 
 .product-price {
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     color: var(--secondary-color);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
@@ -243,7 +247,7 @@ footer {
 
 /* Modal Keranjang */
 .modal {
-    display: none; /* Sembunyikan secara default */
+    display: none;
     position: fixed;
     z-index: 1001;
     left: 0;
@@ -256,7 +260,7 @@ footer {
 
 .modal-content {
     background-color: #fff;
-    margin: 10% auto; /* 10% dari atas dan diposisikan di tengah */
+    margin: 10% auto;
     padding: 30px;
     border: 1px solid #888;
     width: 80%;
@@ -266,7 +270,6 @@ footer {
     animation-duration: 0.4s;
 }
 
-/* Animasi untuk modal */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
